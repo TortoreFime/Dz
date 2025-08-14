@@ -1,1 +1,4 @@
-﻿Console.WriteLine("Hello, World!");
+﻿using Code;
+
+Greeting greeting = new Greeting();
+greeting.Greet();
