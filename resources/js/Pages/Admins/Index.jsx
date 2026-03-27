@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "@inertiajs/react";
 
 export default function UserIndex({employees, orders, supports}){
-    
+
     return(
         <div>
             <header style={{backgroundColor: "#d1d1d1ff", height: "40px", fontFamily: "sans-serif", display: "flex", justifyContent: "space-around"}}>
@@ -11,7 +11,7 @@ export default function UserIndex({employees, orders, supports}){
                 </div>
                 <div><p style={{width: "fit-content", height: "100%", display: "flex", justifyContent: "center", alignItems: "center", margin: "0px"}}>|</p></div>
                 <div style={{width: "fit-content", height: "100%", display: "flex", justifyContent: "center", alignItems: "center"}}>
-                    <Link style={{outline: "none", color: "black", textDecoration: "none"}} href="/">Добавить работника</Link>
+                    <Link style={{outline: "none", color: "black", textDecoration: "none"}} href="/">Добавить работник</Link>
                 </div>
                 <div><p style={{width: "fit-content", height: "100%", display: "flex", justifyContent: "center", alignItems: "center", margin: "0px"}}>|</p></div>
                 <div style={{width: "fit-content", height: "100%", display: "flex", justifyContent: "center", alignItems: "center"}}>
