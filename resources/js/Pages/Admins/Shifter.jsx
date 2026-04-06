@@ -13,6 +13,9 @@ export default function UserIndex({employee}){
             job_id: employee.job_id 
         });
 
+    const handleSubmit = () => {
+        post('/admin/{$id}');
+    }
 
     return(
             <div>
@@ -26,7 +29,7 @@ export default function UserIndex({employee}){
                     </div>
                     <div><p style={{width: "fit-content", height: "100%", display: "flex", justifyContent: "center", alignItems: "center", margin: "0px"}}>|</p></div>
                     <div style={{width: "fit-content", height: "100%", display: "flex", justifyContent: "center", alignItems: "center"}}>
-                        <Link style={{outline: "none", color: "black", textDecoration: "none"}} href="/">Назначить на смену</Link>
+                        <Link style={{outline: "none", color: "black", textDecoration: "none"}} href="/adminShifts">Назначить на смену</Link>
                     </div>
                     <div><p style={{width: "fit-content", height: "100%", display: "flex", justifyContent: "center", alignItems: "center", margin: "0px"}}>|</p></div>
                     <div style={{width: "fit-content", height: "100%", display: "flex", justifyContent: "center", alignItems: "center"}}>
@@ -39,6 +42,7 @@ export default function UserIndex({employee}){
                         <button value={0} onClick={(e) => setData('cur_shift', e.target.value)}>Назначить на текущую смену</button>
                         <button value={1} onClick={(e) => setData('cur_shift', e.target.value)}>Снять со смены</button>
                     </div>
+                    <button onClick={handleSubmit}>Принять изменения</button>
                 </div>
             </div>
     )

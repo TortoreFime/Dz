@@ -1,8 +1,7 @@
 import React from "react";
 import { Link } from "@inertiajs/react";
 
-export default function UserIndex({orders, dishes, supports}){
-
+export default function UserIndex({employees}){
     return(
             <div>
                 <header style={{backgroundColor: "#d1d1d1ff", height: "40px", fontFamily: "sans-serif", display: "flex", justifyContent: "space-around"}}>
@@ -22,40 +21,15 @@ export default function UserIndex({orders, dishes, supports}){
                         <Link style={{outline: "none", color: "black", textDecoration: "none"}} href="/showAdmin">Заказы</Link>
                     </div>
                 </header>
-                <div id="main">
-                    <ul>
-                    {orders.map(order => (
-                        <li style={{listStyleType: "none"}} key={order.id}>{order.id} заказ
-                            <ul>
-                                {supports.map(sup => (
-                                    dishes.map(dish => (
-                                        <div>
-                                            {sup.order_id == order.id && sup.dish_id == dish.id ? 
-                                                <li key={sup.id}>{dish.name}</li>
-                                                : 
-                                                null
-                                            }
-                                        </div>
-                                    ))
-                                ))}
-                            </ul>
-                        </li>
+                <div>
+                    <h1>Работники</h1>
+                    {employees.map(emp => (
+                        <div>
+                            <p style={{marginLeft: ""}}>{emp.name} {emp.surname}</p>
+                            <Link href={`/adminShifts/${emp.id}`}>Изменить текущую смену</Link>
+                        </div>
                     ))}
-                    </ul>
                 </div>
             </div>
-        )
+    )
 }
-// const handleSubmit = (e) => {
-    //     e.preventDefault();
-    //     fetch('https://jsonplaceholder.typicode.com/posts', {
-    //         method: 'POST',
-    //         headers: {
-    //         'Content-Type': 'application/json',
-    //         },
-    //         body: JSON.stringify({ name }),
-    //     })
-    //     .then(response => response.json())
-    //     .then(data => console.log('Успех:', data))
-    //     .catch(error => console.error('Ошибка:', error));
-    // }

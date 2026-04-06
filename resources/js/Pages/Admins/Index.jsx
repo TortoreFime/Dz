@@ -15,7 +15,7 @@ export default function UserIndex({employees, orders, supports}){
                 </div>
                 <div><p style={{width: "fit-content", height: "100%", display: "flex", justifyContent: "center", alignItems: "center", margin: "0px"}}>|</p></div>
                 <div style={{width: "fit-content", height: "100%", display: "flex", justifyContent: "center", alignItems: "center"}}>
-                    <Link style={{outline: "none", color: "black", textDecoration: "none"}} href="/">Назначить на смену</Link>
+                    <Link style={{outline: "none", color: "black", textDecoration: "none"}} href="/adminShifts">Назначить на смену</Link>
                 </div>
                 <div><p style={{width: "fit-content", height: "100%", display: "flex", justifyContent: "center", alignItems: "center", margin: "0px"}}>|</p></div>
                 <div style={{width: "fit-content", height: "100%", display: "flex", justifyContent: "center", alignItems: "center"}}>

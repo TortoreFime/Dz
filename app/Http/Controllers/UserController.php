@@ -108,4 +108,8 @@ class UserController extends Controller
         $employee->update($validated);
         return Inertia::render('Admins/Shifter');
     }
+    public function getEmp(){
+        $employees = Employee::all();
+        return Inertia::render('Admins/Workers', ['employees' => $employees]);
+    }
 }
