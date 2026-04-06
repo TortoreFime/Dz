@@ -10,7 +10,7 @@ use Illuminate\Notifications\Notifiable;
 class Order extends Model
 {
     use HasFactory;
-    
+    public $timestamps = false;
     protected $fillable = [
         'cookState',
         'payState'

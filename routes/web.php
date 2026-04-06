@@ -13,7 +13,8 @@ Route::get('/chef', [UserController::class, 'chefMenu']);
 Route::get('/ordUpdate', [UserController::class, 'ords']);
 Route::get('/waitOrdUpdate', [UserController::class, 'waitOrds']);
 Route::get('/createOrd', [UserController::class, 'getAll']);
-Route::post('/createUser', [UserController::class, 'getEmployees']);
+Route::get('/admin/{$id}', [UserController::class, 'setCurrentShift'])
 
+Route::post('/createUser', [UserController::class, 'getEmployees']);
 Route::post('/createOrd', [UserController::class, 'createOrder']);
 Route::post('/createUser', [UserController::class, 'createEmployee']);

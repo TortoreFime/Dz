@@ -10,7 +10,7 @@ use Illuminate\Notifications\Notifiable;
 class Dish extends Model
 {
     use HasFactory;
-    
+    public $timestamps = false;
     protected $fillable = [
         'name',
         'price'

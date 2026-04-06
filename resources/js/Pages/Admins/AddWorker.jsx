@@ -17,7 +17,7 @@ export default function UserIndex({employees, jobs}){
     const [selectedValue, setSelectedValue] = useState('');
 
     const handleSubmit = () => {
-        post('/createUSer');
+        post('/createUser');
     }
 
     const handleChange = (event) => {
@@ -27,18 +27,22 @@ export default function UserIndex({employees, jobs}){
     return(
         <div>
             <header style={{backgroundColor: "#d1d1d1ff", height: "40px", fontFamily: "sans-serif", display: "flex", justifyContent: "space-around"}}>
-                <div style={{width: "fit-content", height: "100%", display: "flex", justifyContent: "center", alignItems: "center"}}>
-                    <Link style={{outline: "none", color: "black", textDecoration: "none"}} href="/">На главную</Link>
-                </div>
-                <div><p style={{width: "fit-content", height: "100%", display: "flex", justifyContent: "center", alignItems: "center", margin: "0px"}}>|</p></div>
-                <div style={{width: "fit-content", height: "100%", display: "flex", justifyContent: "center", alignItems: "center"}}>
-                    <Link style={{outline: "none", color: "black", textDecoration: "none"}} href="/createOrd">Создать заказ</Link>
-                </div>
-                <div><p style={{width: "fit-content", height: "100%", display: "flex", justifyContent: "center", alignItems: "center", margin: "0px"}}>|</p></div>
-                <div style={{width: "fit-content", height: "100%", display: "flex", justifyContent: "center", alignItems: "center"}}>
-                    <Link style={{outline: "none", color: "black", textDecoration: "none"}} href="/waitOrdUpdate">Изменить статус заказа</Link>
-                </div>
-            </header>
+                            <div style={{width: "fit-content", height: "100%", display: "flex", justifyContent: "center", alignItems: "center"}}>
+                                <Link style={{outline: "none", color: "black", textDecoration: "none"}} href="/">На главную</Link>
+                            </div>
+                            <div><p style={{width: "fit-content", height: "100%", display: "flex", justifyContent: "center", alignItems: "center", margin: "0px"}}>|</p></div>
+                            <div style={{width: "fit-content", height: "100%", display: "flex", justifyContent: "center", alignItems: "center"}}>
+                                <Link style={{outline: "none", color: "black", textDecoration: "none"}} href="/createUser">Добавить работник</Link>
+                            </div>
+                            <div><p style={{width: "fit-content", height: "100%", display: "flex", justifyContent: "center", alignItems: "center", margin: "0px"}}>|</p></div>
+                            <div style={{width: "fit-content", height: "100%", display: "flex", justifyContent: "center", alignItems: "center"}}>
+                                <Link style={{outline: "none", color: "black", textDecoration: "none"}} href="/">Назначить на смену</Link>
+                            </div>
+                            <div><p style={{width: "fit-content", height: "100%", display: "flex", justifyContent: "center", alignItems: "center", margin: "0px"}}>|</p></div>
+                            <div style={{width: "fit-content", height: "100%", display: "flex", justifyContent: "center", alignItems: "center"}}>
+                                <Link style={{outline: "none", color: "black", textDecoration: "none"}} href="/showAdmin">Заказы</Link>
+                            </div>
+                        </header>
             <div>
                 <h1>Добавление работника</h1>
                 <div style={{width: "200px"}}>

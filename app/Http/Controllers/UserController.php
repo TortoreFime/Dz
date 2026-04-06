@@ -61,7 +61,7 @@ class UserController extends Controller
         return Inertia::render('Waiters/Update', ['orders' => $orders]);
     }
     public function createOrder(Request $request){
-        $validated = $request.validate([
+        $validated = $request->validate([
             'cookState' => 'Готовиться',
             'payState' => 'required|string|max:255'
         ]);
@@ -75,12 +75,12 @@ class UserController extends Controller
         return Inertia::render('Waiters/Create', ['orders' => $orders, 'dishes' => $dishes, 'supports' => $supports]);
     }
     public function createEmployee(Request $request){
-        $validated = $request.validate([
+        $validated = $request->validate([
             'name' => 'required|string|max:255',
             'surname' => 'required|string|max:255',
             'login' => 'required|string|max:255',
             'password' => 'required|string|max:255',
-            'work_state' => 'Работает',
+            'work_state' => 'required|string|max:255',
             'cur_shift' => '0',
             'is_active' => '0',
             'job_id' => 'required|integer|min:0|max:3'
@@ -92,5 +92,20 @@ class UserController extends Controller
         $employees = Employee::all();
         $jobs = Job::all();
         return Inertia::render('Admins/AddWorker', ['employees' => $employees, 'jobs' => $jobs]);
+    }
+    public function setCurrentShift(Request $request, $id){
+        $employee = Employee::findOrFail($id);
+        $validated = $request->validate([
+           'name' => 'required|string|max:255',
+            'surname' => 'required|string|max:255',
+            'login' => 'required|string|max:255',
+            'password' => 'required|string|max:255',
+            'work_state' => 'required|string|max:255',
+            'cur_shift' => '0',
+            'is_active' => '0',
+            'job_id' => 'required|integer|min:0|max:3'
+        ]);
+        $employee->update($validated);
+        return Inertia::render('Admins/Shifter');
     }
 }
